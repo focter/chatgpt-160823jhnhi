@@ -11,8 +11,8 @@ import json
 import time
 
 os.environ["REPLICATE_API_TOKEN"] = "787f515cb0624813736c11e7fefec66473394f02"
-app = Flask(__name__)
-@app.route("/", methods=["GET","POST"])
+appi = Flask(__name__)
+@appi.route("/", methods=["GET","POST"])
 def index():
     if request.method == "POST":
         q = request.form.get("q")
@@ -29,5 +29,5 @@ def index():
         return(render_template("index.html", result="waiting"))
 
 if __name__ == "__main__" :
-    app.run()
+    appi.run()
 
